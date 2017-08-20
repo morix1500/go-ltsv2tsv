@@ -11,7 +11,7 @@ type LTSVConverter struct {
 }
 
 func NewConverter(r io.Reader) *LTSVConverter {
-	return &LTSVConverter{ bufio.NewReader(r) }
+	return &LTSVConverter{bufio.NewReader(r)}
 }
 
 func (r *LTSVConverter) Converter() (records [][]string, err error) {
@@ -41,7 +41,7 @@ func (r *LTSVConverter) Converter() (records [][]string, err error) {
 
 			_, is_exists := header[field_arr[0]]
 
-			if ! is_exists {
+			if !is_exists {
 				header[field_arr[0]] = len(header)
 			}
 			fields[i] = field_arr
@@ -57,9 +57,9 @@ func (r *LTSVConverter) Converter() (records [][]string, err error) {
 		head_record[v] = k
 	}
 
-	records = make([][]string, data_index + 1)
+	records = make([][]string, data_index+1)
 
-	for i := 0 ; i < len(datas) ; i++ {
+	for i := 0; i < len(datas); i++ {
 		if i == 0 {
 			records[i] = head_record
 		}
