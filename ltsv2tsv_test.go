@@ -15,12 +15,14 @@ var converterTests = []struct {
 test1:hoge	test2:hoge2	test3:hoge3
 test1:hoge4	test2:hoge5	test3:hoge6
 test2:hoge7	test3:hoge8	test4:hoge9
+test1:08:01:01
 		`,
 		[][]string{
 			{"test1", "test2", "test3", "test4"},
 			{"hoge", "hoge2", "hoge3", ""},
 			{"hoge4", "hoge5", "hoge6", ""},
 			{"", "hoge7", "hoge8", "hoge9"},
+			{"08:01:01","","",""},
 		},
 	},
 	{

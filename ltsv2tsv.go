@@ -37,7 +37,7 @@ func (r *LTSVConverter) Converter() (records [][]string, err error) {
 		fields := make([][]string, len(line_arr))
 
 		for i, field := range line_arr {
-			field_arr := strings.Split(field, ":")
+			field_arr := strings.SplitN(field, ":", 2)
 
 			_, is_exists := header[field_arr[0]]
 
